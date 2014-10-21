@@ -17,6 +17,7 @@
         <module>io</module>
         <module>xml</module>
         <module>content</module>
+        <module>pixieweb</module>
     </modules>
 
 </project>
