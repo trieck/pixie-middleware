@@ -3,12 +3,35 @@ Ext.define('pixieweb.controller.AppController', {
     init: function () {
         this.control({
             "#searchText": {
-                triggerclick: this.onTriggerClick
+                clearClick: this.onClearClick,
+                searchClick: this.onSearchClick
             }
         });
     },
 
-    onTriggerClick: function (trigger, event) {
-        Ext.Msg.alert(trigger.getValue());
+    onClearClick: function (trigger, event) {
+        trigger.setValue(Ext.emptyString);
+    },
+
+    onSearchClick: function (trigger, event) {
+        var query = Ext.String.format("text[{0}]", trigger.getValue());
+
+        Ext.Ajax.request({
+            url: 'ContentServlet',
+            method: 'GET',
+            params: {
+                db: 'niv',
+                'function': 'search',
+                start: 1,
+                count: 25,
+                query: query
+            },
+            success: function (response) {
+                var text = response.responseText;
+            },
+
+            failure: function (response) {
+            }
+        });
     }
 });

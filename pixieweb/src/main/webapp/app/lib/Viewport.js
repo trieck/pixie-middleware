@@ -24,9 +24,13 @@ Ext.define('pixieweb.lib.Viewport', {
                     xtype: 'trigger',
                     trigger1Cls: 'x-form-clear-trigger',
                     trigger2Cls: 'x-form-search-trigger',
-                    onTriggerClick: function (e) {
+                    onTrigger1Click: function (e) {
                         var me = this;
-                        me.fireEvent("triggerclick", me, e);
+                        me.fireEvent("clearClick", me, e);
+                    },
+                    onTrigger2Click: function (e) {
+                        var me = this;
+                        me.fireEvent("searchClick", me, e);
                     }
                 }
             ]
