@@ -1,13 +1,11 @@
-Ext.define('pixieweb.lib.SummaryGrid', {
+Ext.define('pixieweb.lib.Summary', {
     extend: 'Ext.grid.Panel',
     alias: 'widget.summary-grid',
-    width: 200,
-    height: 200,
     title: 'Summary',
     columns: [
         {
             text: 'Book',
-            flex: 2,
+            flex: 1,
             draggable: false,
             menuDisabled: true,
             sortable: false,
@@ -33,7 +31,7 @@ Ext.define('pixieweb.lib.SummaryGrid', {
         },
         {
             text: 'Text',
-            flex: 2,
+            flex: 3,
             draggable: false,
             menuDisabled: true,
             sortable: false,
@@ -42,8 +40,22 @@ Ext.define('pixieweb.lib.SummaryGrid', {
         }
     ],
 
+    viewConfig: {
+        trackOver: true,
+        stripeRows: false
+    },
+
     initComponent: function () {
         this.store = Ext.getStore('Content');
+
+        this.dockedItems = this.dockedItems || [];
+        this.dockedItems.push({
+            store: this.store,
+            xtype: 'pagingtoolbar',
+            dock: 'bottom',
+            displayInfo: true
+        });
+        
         this.callParent(arguments);
     }
 });

@@ -11,16 +11,12 @@ Ext.define('pixieweb.controller.AppController', {
         });
     },
 
-    onClearClick: function (trigger, event) {
+    onClearClick: function (trigger) {
         trigger.setValue(Ext.emptyString);
     },
 
     onSearchClick: function (trigger, event) {
-        var me = this,
-            query = Ext.String.format("text[{0}]", trigger.getValue()),
-            options = { params: { query: query } },
-            store = Ext.getStore('Content');
-
-        store.load(options);
+        var store = Ext.getStore('Content');
+        store.load();
     }
 });

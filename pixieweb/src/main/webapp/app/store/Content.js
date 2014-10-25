@@ -9,8 +9,7 @@ Ext.define('pixieweb.store.Content', {
         pageParam: undefined,
         extraParams: {
             'function': 'search',
-            db: 'niv',
-            start: 1
+            db: 'niv'
         },
 
         reader: {
@@ -20,6 +19,16 @@ Ext.define('pixieweb.store.Content', {
             idProperty: '@docid',
             totalProperty: '@count',
             successProperty: undefined
+        }
+    },
+    listeners: {
+        beforeload: function (store, operation) {
+            var proxy = store.getProxy(),
+                query = Ext.String.format("text[{0}]", Ext.getCmp('searchText').getValue()),
+                start = (operation.start || 0) + 1;
+
+            proxy.setExtraParam('query', query);
+            proxy.setExtraParam('start', start);
         }
     }
 });

@@ -7,7 +7,7 @@ Ext.define('pixieweb.lib.Viewport', {
         split: true
     },
 
-    requires: ['pixieweb.lib.SummaryGrid'],
+    requires: ['pixieweb.lib.Summary'],
 
     items: [
         {
@@ -27,12 +27,10 @@ Ext.define('pixieweb.lib.Viewport', {
                     trigger1Cls: 'x-form-clear-trigger',
                     trigger2Cls: 'x-form-search-trigger',
                     onTrigger1Click: function (e) {
-                        var me = this;
-                        me.fireEvent("clearClick", me, e);
+                        this.fireEvent("clearClick", this, e);
                     },
                     onTrigger2Click: function (e) {
-                        var me = this;
-                        me.fireEvent("searchClick", me, e);
+                        this.fireEvent("searchClick", this, e);
                     }
                 }
             ]
@@ -42,7 +40,7 @@ Ext.define('pixieweb.lib.Viewport', {
             title: 'Details',
             collapsible: true,
             split: true,
-            width: 150
+            width: 300
         }, {
             region: 'center',
             xtype: 'summary-grid'
