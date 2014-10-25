@@ -55,7 +55,8 @@ Ext.define('pixieweb.lib.Summary', {
             dock: 'bottom',
             displayInfo: true
         });
-        
+
         this.callParent(arguments);
     }
 });
+

@@ -1,6 +1,7 @@
 Ext.define('pixieweb.store.Content', {
     extend: 'Ext.data.Store',
     model: 'pixieweb.model.Content',
+    requires: ['pixieweb.lib.CustomXmlReader'],
     pageSize: 25,
     proxy: {
         type: 'ajax',
@@ -13,7 +14,7 @@ Ext.define('pixieweb.store.Content', {
         },
 
         reader: {
-            type: 'xml',
+            type: 'custom-xmlreader',
             record: 'record',
             root: 'results',
             idProperty: '@docid',
