@@ -12,11 +12,13 @@ Ext.define('pixieweb.controller.AppController', {
     },
 
     onClearClick: function (trigger) {
+        var store = Ext.getStore('Content');
         trigger.setValue(Ext.emptyString);
+        store.removeAll();
     },
 
     onSearchClick: function (trigger, event) {
         var store = Ext.getStore('Content');
-        store.load();
+        store.loadPage(1);
     }
 });

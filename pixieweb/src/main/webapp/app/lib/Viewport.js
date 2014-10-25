@@ -31,6 +31,14 @@ Ext.define('pixieweb.lib.Viewport', {
                     },
                     onTrigger2Click: function (e) {
                         this.fireEvent("searchClick", this, e);
+                    },
+                    listeners: {
+                        specialkey: function (field, e) {
+                            var me = this;
+                            if (e.getKey() === e.ENTER) {
+                                me.onTrigger2Click();
+                            }
+                        }
                     }
                 }
             ]
