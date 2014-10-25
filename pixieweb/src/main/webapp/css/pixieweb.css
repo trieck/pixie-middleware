@@ -22,7 +22,9 @@
 .x-tab-default-right,
 .x-tab-default-bottom,
 .x-tab-default-left,
-.x-tab-bar-default {
+.x-tab-bar-default,
+.x-toolbar-default,
+.x-column-header {
     background-color: #EDE5DB;
     background-image: -ms-linear-gradient(top, #EDE5DB 0%, #DCD0C2 80%);
     background-image: -moz-linear-gradient(top, #EDE5DB 0%, #DCD0C2 80%);
