@@ -1,5 +1,7 @@
 Ext.define('pixieweb.controller.AppController', {
     extend: 'Ext.app.Controller',
+    stores: ['Content'],
+
     init: function () {
         this.control({
             "#searchText": {
@@ -14,24 +16,11 @@ Ext.define('pixieweb.controller.AppController', {
     },
 
     onSearchClick: function (trigger, event) {
-        var query = Ext.String.format("text[{0}]", trigger.getValue());
+        var me = this,
+            query = Ext.String.format("text[{0}]", trigger.getValue()),
+            options = { params: { query: query } },
+            store = Ext.getStore('Content');
 
-        Ext.Ajax.request({
-            url: 'ContentServlet',
-            method: 'GET',
-            params: {
-                db: 'niv',
-                'function': 'search',
-                start: 1,
-                count: 25,
-                query: query
-            },
-            success: function (response) {
-                var text = response.responseText;
-            },
-
-            failure: function (response) {
-            }
-        });
+        store.load(options);
     }
 });

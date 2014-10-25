@@ -7,6 +7,8 @@ Ext.define('pixieweb.lib.Viewport', {
         split: true
     },
 
+    requires: ['pixieweb.lib.SummaryGrid'],
+
     items: [
         {
             region: 'west',
@@ -43,11 +45,7 @@ Ext.define('pixieweb.lib.Viewport', {
             width: 150
         }, {
             region: 'center',
-            xtype: 'tabpanel',
-            activeTab: 0,
-            items: [{
-                title: 'Summary'
-            }]
+            xtype: 'summary-grid'
         }
     ],
 
@@ -55,5 +53,4 @@ Ext.define('pixieweb.lib.Viewport', {
         Ext.QuickTips.init();
         this.callParent(arguments);
     }
-})
-;
+});
