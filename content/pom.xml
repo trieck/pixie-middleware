@@ -6,7 +6,7 @@
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>content</artifactId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>content</name>
     <url>http://maven.apache.org</url>
@@ -23,6 +23,25 @@
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <failOnMissingWebXml>true</failOnMissingWebXml>
+                    <archiveClasses>false</archiveClasses>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <server>TomcatServer</server>
+                    <path>/${project.artifactId}</path>
                 </configuration>
             </plugin>
         </plugins>
