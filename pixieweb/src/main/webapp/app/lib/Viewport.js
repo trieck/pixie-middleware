@@ -19,6 +19,7 @@ Ext.define('pixieweb.lib.Viewport', {
             dockedItems: [
                 {
                     xtype: 'toolbar',
+                    height: '100%',
                     dock: 'top',
                     layout: 'vbox',
                     items: [
