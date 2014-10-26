@@ -1,38 +1,4 @@
-
-.x-panel-header,
-.x-panel-header-default {
-    display: inline-block;
-    margin: 0px;
-    padding: 5px;
-    border: 1px solid #BAA994;
-    border-radius: 2px;
-    background-color: #EDE5DB;
-    background-image: -ms-linear-gradient(top, #EDE5DB 0%, #DCD0C2 80%);
-    background-image: -moz-linear-gradient(top, #EDE5DB 0%, #DCD0C2 80%);
-    background-image: -webkit-linear-gradient(top, #EDE5DB 0%, #DCD0C2 80%);
-    background-image: linear-gradient(top, #EDE5DB 0%, #DCD0C2 80%);
-    box-shadow: inset 0 1px #F6F2EC, 0 3px 2px #E5E5E5;
-}
-
-.x-panel-body-default, .x-grid-cell {
-    background-color: #FFFFF0;
-}
-
-.x-tab-default-top,
-.x-tab-default-right,
-.x-tab-default-bottom,
-.x-tab-default-left,
-.x-tab-bar-default,
-.x-toolbar-default,
-.x-column-header {
-    background-color: #EDE5DB;
-    background-image: -ms-linear-gradient(top, #EDE5DB 0%, #DCD0C2 80%);
-    background-image: -moz-linear-gradient(top, #EDE5DB 0%, #DCD0C2 80%);
-    background-image: -webkit-linear-gradient(top, #EDE5DB 0%, #DCD0C2 80%);
-    background-image: linear-gradient(top, #EDE5DB 0%, #DCD0C2 80%);
-}
-
 .highlight {
     color: darkred;
-    font-weight: 900;
+    font-weight: 800;
 }

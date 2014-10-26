@@ -9,8 +9,7 @@ Ext.define('pixieweb.store.Content', {
         limitParam: 'count',
         pageParam: false,
         extraParams: {
-            'function': 'search',
-            db: 'niv'
+            'function': 'search'
         },
 
         reader: {
@@ -25,9 +24,11 @@ Ext.define('pixieweb.store.Content', {
     listeners: {
         beforeload: function (store, operation) {
             var proxy = store.getProxy(),
+                db = Ext.getCmp('bibleVersion').getValue(),
                 query = Ext.String.format("text[{0}]", Ext.getCmp('searchText').getValue()),
                 start = (operation.start || 0) + 1;
 
+            proxy.setExtraParam('db', db);
             proxy.setExtraParam('query', query);
             proxy.setExtraParam('start', start);
         }

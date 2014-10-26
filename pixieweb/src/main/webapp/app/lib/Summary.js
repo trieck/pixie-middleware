@@ -20,7 +20,11 @@ Ext.define('pixieweb.lib.Summary', {
             menuDisabled: true,
             sortable: false,
             resizable: true,
-            dataIndex: 'text'
+            dataIndex: 'text',
+            renderer: function (value, metadata) {
+                metadata.tdAttr = 'data-qtip="' + Ext.htmlEncode(value) + '"';
+                return value;
+            }
         }
     ],
 
