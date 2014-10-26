@@ -2,10 +2,10 @@
 .x-panel-header,
 .x-panel-header-default {
     display: inline-block;
-    margin: 0;
+    margin: 0px;
     padding: 5px;
     border: 1px solid #BAA994;
-    border-radius: 5px;
+    border-radius: 2px;
     background-color: #EDE5DB;
     background-image: -ms-linear-gradient(top, #EDE5DB 0%, #DCD0C2 80%);
     background-image: -moz-linear-gradient(top, #EDE5DB 0%, #DCD0C2 80%);
@@ -30,4 +30,9 @@
     background-image: -moz-linear-gradient(top, #EDE5DB 0%, #DCD0C2 80%);
     background-image: -webkit-linear-gradient(top, #EDE5DB 0%, #DCD0C2 80%);
     background-image: linear-gradient(top, #EDE5DB 0%, #DCD0C2 80%);
+}
+
+.highlight {
+    color: darkred;
+    font-weight: 900;
 }
