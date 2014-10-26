@@ -4,30 +4,14 @@ Ext.define('pixieweb.lib.Summary', {
     title: 'Summary',
     columns: [
         {
-            text: 'Book',
-            flex: 1,
-            draggable: false,
-            menuDisabled: true,
-            sortable: false,
-            resizable: true,
-            dataIndex: 'book'
-        }, {
-            text: 'Chapter',
-            flex: 1,
-            draggable: false,
-            menuDisabled: true,
-            sortable: false,
-            resizable: true,
-            dataIndex: 'chapter'
-        },
-        {
             text: 'Verse',
             flex: 1,
             draggable: false,
             menuDisabled: true,
             sortable: false,
             resizable: true,
-            dataIndex: 'verse'
+            xtype: 'templatecolumn',
+            tpl: "{book} {chapter}:{verse}"
         },
         {
             text: 'Text',

@@ -7,7 +7,7 @@ Ext.define('pixieweb.store.Content', {
         type: 'ajax',
         url: 'ContentServlet',
         limitParam: 'count',
-        pageParam: undefined,
+        pageParam: false,
         extraParams: {
             'function': 'search',
             db: 'niv'
@@ -19,7 +19,7 @@ Ext.define('pixieweb.store.Content', {
             root: 'results',
             idProperty: '@docid',
             totalProperty: '@count',
-            successProperty: undefined
+            successProperty: false
         }
     },
     listeners: {
