@@ -26,9 +26,11 @@ public class Repository {
     }
 
     public File getPath() throws IOException {
-        String repos = config.getProperty("content.repos");
+        String propertyName = System.getProperty("os.name").startsWith("Windows") ?
+                "content.winRepos" : "content.unixRepos";
+        String repos = config.getProperty(propertyName);
         if (repos.length() == 0) {
-            throw new IOException(String.format("content.repos not set."));
+            throw new IOException(String.format(propertyName + " not set."));
         }
 
         File dir = new File(repos);
